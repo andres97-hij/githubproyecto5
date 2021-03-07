@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+   
+  </head>
+  <body>
+    <h1>BIENVENIDO A LA PELUQUERIA </h1>
+ <div  class="container p-4">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <form action="/peluqueria/agregar" method="post">
+            <div class="form-group">
+              <label for="">registro del cliente</label>  
+            </div>
+            <p>cliente</p> 
+              <input value="{{cliente}}"class="form-control" type="text" name="cliente" id="">
+            <p>servicio</p> 
+              <input value="{{servicio}}" class="form-control" type="text" name="servicio" id="">
+            <p>precio</p> 
+              <input value="{{precio}}"class="form-control" type="text" name="precio" id="">
+            <p>peluquero</p> 
+              <input value="{{precio}}"class="form-control" type="text" name="precio" id="">
+            <p>fecha</p> 
+              <input value="{{precio}}"class="form-control" type="text" name="precio" id="">
+            <p>servicio</p> 
+              <input value="{{precio}}"class="form-control" type="text" name="precio" id="">
+              <!--``-->
+              <br>
+            <select class="custom-select custom-select-lg mb-3">
+            <option selected>Estado del producto</option>
+            <option value="{{estado_del_producto}}">Aceptado</option>
+            <option value="{{estado_del_producto}}">Rechazado</option>
+            <option value="{{estado_del_producto}}">Pendiente</option>
+            </select>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-outline-success btn-block">agregar</button>
+            </div>
+            </div>
+          </form>
+<!-- formulario -->
+        </div>
+      </div>
+    </div>  
+    <br>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id_cliente</th>
+      <th scope="col">cliente</th>
+      <th scope="col">servicio</th>
+      <th scope="col">precio</th>
+      <th scope="col">peluquero</th>
+      <th scope="col">servicio</th>
+
+    </tr>
+  </thead>
+  <tbody>
+      {{#each pelu}}
+    <tr>
+      <th scope="row">{{id_cliente}}</th>
+      <td>{{cliente}}</td>
+      <td>{{servicio}}</td>
+      <td>{{precio}}</td>
+    
+      <td><button type="button" class="btn btn-outline-primary">modificar</button></td>
+      <td><a href="delete/{{id}}" class="btn btn-outline-danger">Eliminar</a></td>
+    </tr>
+   {{/each}}
+  </tbody>
+</table>
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

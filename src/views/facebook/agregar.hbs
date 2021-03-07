@@ -1,0 +1,117 @@
+
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="/imagenes/facebook.jpg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+    FACEBOOK
+  </a>
+</nav>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="">ANDREWS <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="buscar" aria-label="buscar">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
+  </div>
+</nav>
+<img src="/imagenes/boda.jpg"  WIDTH="200" HEIGHT="200" class="img-thumbnail">
+</div>
+
+
+<div class="container">
+<h4>LISTA DE TAREAS</h4>
+  <div class="todolist">
+    <div>
+      <div class="input-group mb-3">
+        <input id="input-tarea" type="text" class="form-control" placeholder="Introduce tarea" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button id="button-agregar" class="btn btn-dark" type="button">Button</button>
+        </div>
+      </div>
+    </div>
+    <div class="lista">
+      <ul id="lista-tareas" class="list-group">
+      </ul>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Escriba un comentario</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">ANDREWS</h5>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+              <input type="text" value="{{comentario}}" class="form-control" name="nombre" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enviar un comentario">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+       <button type="button" class="btn btn-outline-danger">Cerrar</button>
+       <a href="" type="button" class="btn btn-outline-success">Enviar Comentario</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<br>
+
+</div>
+<div class="container">
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">comentario</th>
+    </tr>
+  </thead>
+  <tbody>
+       {{#each face}}
+    <tr>
+      <th scope="row">{{id}}</th>
+      <td>{{comentario}}</td>
+    </tr>
+     {{/each}}
+  </tbody>
+</table>
+</div>
+
+
+
+
+
+
+

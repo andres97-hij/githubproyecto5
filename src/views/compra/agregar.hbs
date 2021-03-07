@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <script src="js/popper.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+
+    <title>tienda</title>
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row justify-content-between mb-5">
+                <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                    <a class="navbar-brand" href="">TIENDA COMERCIO S.A </a>
+                    <img src="/imagenes/zorra.png" class="img-thumbnail"  WIDTH="100" HEIGHT="100"alt="...">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <br>
+
+    <main>
+        <div class="container">
+            <div class="row mt-3">
+                <div class="col">
+                    <h2 class="d-flex justify-content-center mb-3">FACTURA VENTA </h2>
+                    <center> <img src="/imagenes/icono.jpg" class="img-thumbnail"  WIDTH="100" HEIGHT="100"alt="..."></center>
+                    <br>
+                    <form id="procesar-pago" action="/compra/agregar" method="post">
+                        <div class="form-group row">
+                            <label for="cliente" class="col-12 col-md-2 col-form-label h2">Cliente :</label>
+                            <div class="col-12 col-md-10">
+                                <input value="{{cliente}}"class="form-control" type="text" name="cliente" id="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="email" class="col-12 col-md-2 col-form-label h2">Correo :</label>
+                            <div class="col-12 col-md-10">
+                                <input value="{{correo}}"class="form-control" type="text" name="correo" id="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="email" class="col-12 col-md-2 col-form-label h2">Producto :</label>
+                            <div class="col-12 col-md-10">
+                                <input value="{{producto}}"class="form-control" type="text" name="producto" id="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="email" class="col-12 col-md-2 col-form-label h2">precio :</label>
+                            <div class="col-12 col-md-10">
+                                <input value="{{precio}}"class="form-control" type="text" name="precio" id="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="email" class="col-12 col-md-2 col-form-label h2">cantidad :</label>
+                            <div class="col-12 col-md-10">
+                                <input value="{{cantidad}}"class="form-control" type="text" name="cantidad" id="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="email" class="col-12 col-md-2 col-form-label h2">SubTotal :</label>
+                            <div class="col-12 col-md-10">
+                                <input value="{{subtotal}}"class="form-control" type="text" name="subtotal" id="">
+                            </div>
+                        </div>
+                         <div class="form-group">
+                        <button type="submit" class="btn btn-outline-success btn-block">registrar datos </button>
+                        </div>
+
+                        <div id="carrito" class="form-group table-responsive" >
+                            <table class="table" id="lista-compra" >
+                                <thead>
+                                  
+                                    <tr>
+                                        <th scope="col">Id</th>
+                                        <th scope="col">Cliente</th>
+                                        <th scope="col">Correo</th>
+                                        <th scope="col">producto</th>
+                                        <th scope="col">Precio</th>
+                                        <th scope="col">Cantidad</th>
+                                        <th scope="col">SubTotal</th>
+                                        <th scope="col"></th>
+                                        <th></th>
+                                    </tr>
+                                  
+                                </thead>
+                                <tbody >
+                                {{#each comp}}
+                                </tbody>
+                                <tr>
+                                    <tr>
+                                    <th scope="row">{{id}}</th>
+                                    <th >{{cliente}}</th>
+                                    <th >{{correo}}</th>
+                                    <td>{{producto}}</td>
+                                    <td>{{precio}}</td>
+                                    <td>{{cantidad}}</td>
+                                    <td>{{subtotal}}</td>
+                                    <td><a href="delete/{{id}}" class="btn btn-outline-danger">Eliminar</a></td>
+                                    <td><a href="/update/:id" class="btn btn-outline-info">Modificar</a></td>
+                                    </tr>
+
+                                     {{/each}}
+                                    
+                                    <!-- <th scope="col"></th> -->
+                                    <!-- <th scope="col"></th> -->
+                                </tr>
+                                  
+                            </table>
+                        </div>
+
+                        <div class="row justify-content-center" id="loaders">
+                            <img id="cargando" src="" width="220">
+                        </div>
+
+                        <div class="row justify-content-between">
+                            <div class="col-md-4 mb-2">
+                                <a href="" class="btn btn-info btn-block">Actualizar Pagina</a>
+                            </div>
+                            <div class="col-xs-12 col-md-4">
+                                <button href="#" class="btn btn-success btn-block" id="procesar-compra">Confirmar compra</button>
+                            </div>
+                        </div>
+                    </form>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </main>
+
+
+
+
+
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/sweetalert2.min.js"></script>
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+
+    <script src="js/carrito.js"></script>
+    <script src="js/compra.js"></script>
+
+
+</body>
+
+</html>

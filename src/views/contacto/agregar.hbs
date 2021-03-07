@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <script src="js/popper.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+
+    <title>tienda</title>
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row justify-content-between mb-5">
+                <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                    <a class="navbar-brand" href="">ANDREWS S.A</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <br>
+
+    <main>
+        <div class="container">
+            <div class="row mt-3">
+                <div class="col">
+                    <h2 class="d-flex justify-content-center mb-3">NUEVO CONTACTO CLIENTE </h2>
+                    <center> <img src="/imagenes/icono.jpg" class="img-thumbnail"  WIDTH="100" HEIGHT="100"alt="..."></center>
+                    <br>
+                    <form id="procesar-pago" action="/contacto/agregar" method="post">
+                        <div class="form-group row">
+                            <label for="nombre" class="col-12 col-md-2 col-form-label h2">nombre :</label>
+                            <div class="col-12 col-md-10">
+                                <input value="{{nombre}}"class="form-control" type="text" name="nombre" id="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="apellido" class="col-12 col-md-2 col-form-label h2">apellido:</label>
+                            <div class="col-12 col-md-10">
+                                <input value="{{apellido}}"class="form-control" type="text" name="apellido" id="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="direccion" class="col-12 col-md-2 col-form-label h2">direccion:</label>
+                            <div class="col-12 col-md-10">
+                                <input value="{{direccion}}"class="form-control" type="text" name="direccion" id="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="telefono" class="col-12 col-md-2 col-form-label h2">telefono:</label>
+                            <div class="col-12 col-md-10">
+                                <input value="{{telefono}}"class="form-control" type="text" name="telefono" id="">
+                            </div>
+                        </div>
+                         <div class="form-group">
+                        <button type="submit" class="btn btn-outline-success btn-block">registrar datos </button>
+                        </div>
+
+                        <div id="carrito" class="form-group table-responsive" >
+                            <table class="table" id="lista-compra" >
+                                <thead>
+                                  
+                                    <tr>
+                                        <th scope="col">Id</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Apellido</th>
+                                        <th scope="col">Direccion</th>
+                                        <th scope="col">Telefono</th>
+                                        <th scope="col"></th>
+                                        <th></th>
+                                    </tr>
+                                  
+                                </thead>
+                                <tbody >
+                                {{#each tato}}
+                                </tbody>
+                                <tr>
+                                    <tr>
+                                    <th scope="row">{{id}}</th>
+                                    <th>{{nombre}}</th>
+                                    <th>{{apellido}}</th>
+                                    <td>{{direccion}}</td>
+                                    <td>{{telefono}}</td>
+                                    
+                                    <td><a href="delete/{{id}}" class="btn btn-outline-danger">Eliminar</a></td>
+                                    <td><a href="/update/:id" class="btn btn-outline-info">Modificar</a></td>
+                                    </tr>
+
+                                     {{/each}}
+                                    
+                                    <!-- <th scope="col"></th> -->
+                                    <!-- <th scope="col"></th> -->
+                                </tr>   
+                            </table>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/sweetalert2.min.js"></script>
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+
+    <script src="js/carrito.js"></script>
+    <script src="js/compra.js"></script>
+
+
+</body>
+
+</html>

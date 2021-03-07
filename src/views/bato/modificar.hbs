@@ -1,0 +1,79 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-5 offset-md-3 card">
+      <div class="card-body">
+        <form action="/update/<%= data.id %>" method="POST">
+          <div class="form-group">
+            <input type="text" name="name" value="<%= data.name%>" placeholder="Name" class="form-control" autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" name="address" value="<%= data.address%>" placeholder="Address" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" name="phone" value="<%= data.phone%>" placeholder="Phone" class="form-control">
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            save customer
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modificarusuarios{{id}}">
+                        modificar
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="modificarusuarios{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                <form method="POST" action="/bato/modificar/{{id}}">
+                                    <div class="modal-header">
+                                        <h5 style="color:red" class="modal-title" id="exampleModalLabel">modificar</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div style="color:blue;" class="modal-body">
+                                    
+
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">nombre</label>
+                                                <input type="text" value="{{nombre}}" class="form-control" name="usuario" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="usuario">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">referencia</label>
+                                                <input type="text" value="{{referencia}}" class="form-control" name="contra" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="contra">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">precio</label>
+                                                <input type="text" value="{{precio}}" class="form-control" name="rol_id" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="rol_id">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">cantidad</label>
+                                                <input type="text" value="{{nombre}}" class="form-control" name="nombre" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="nombre">
+                                            </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
+                                        <button type="submit" class="btn btn-primary">modificar</button>
+                                    </div>
+                                </form>
+                                </div>
+                            </div>
+                        </div>
+                        </td>
+                        </td>
+                        
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>

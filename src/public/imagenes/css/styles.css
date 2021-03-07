@@ -1,0 +1,35 @@
+element.style {
+    background-position: -1110px -625.833px;
+    width: 100px;
+    height: 100px;
+    float: left;
+    border-radius: 54px;
+    border: 4px solid rgb(136, 136, 136);
+    background-repeat: no-repeat;
+    position: absolute;
+    background-image: url(sample01.jpg);
+    left: 326px;
+    top: 346px;
+    display: block;
+}
+user agent stylesheet
+div {
+
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+img[Attributes Style] {
+    width: 384px;
+    height: 240px;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 2px;
+}

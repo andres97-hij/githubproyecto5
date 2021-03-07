@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Product App</title>
+    <!-- Bootswatch Cosmo Theme -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="App.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">ANDREWS S.A</a>
+    </nav>
+
+
+    <div class="container">
+        <!-- APPLICATION -->
+        <div id="App" class="row pt-5">
+
+            <!-- FORM -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Agregar un productos</h4>
+                    </div>
+                    <form id="product-form" class="card-body">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Nombreproducto" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" id="price" step="0.01" placeholder="Precioproducto"
+                                class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" id="year" min="1900" max="2099" step="1" value="2018"
+                                class="form-control">
+                        </div>
+                        <input type="submit" value="enviar" class="btn btn-outline-success btn-block">
+                    </form>
+                </div>
+            </div>
+            
+
+            <!-- PRODUCTS LIST -->
+            <div id="" class=""></div>
+        </div>
+    </div>
+
+    <script src="" type="module"></script>
+</body>
+
+<br>
+<div class="container">
+    <div class="col-md-8 ms-md-auto">
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">codigo</th>
+      <th scope="col">nombre</th>
+      <th scope="col">precio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+</div>
+</html>
